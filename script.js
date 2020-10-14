@@ -17,23 +17,24 @@ tiles.addTo(mymap);
 const getISS = async () => {
     const response = await fetch(apiUrl);
     const data = await response.json();
-    const { latitude, longitude, visibility } = data;
+    const { latitude, longitude, visibility, velocity } = data;
     document.getElementById("lat").innerText = latitude.toFixed(2) + '\xB0';
     document.getElementById("lon").innerText = longitude.toFixed(2) + '\xB0';
     document.getElementById("visibility").innerText = visibility;
+    document.getElementById("velocity").innerText = velocity.toFixed(2);
     marker.setLatLng([latitude, longitude]);
     mymap.setView([latitude, longitude]);
     return data; 
 } 
 
-const getGeoLocation = async (data) => {
-    const response2 = await fetch(`https://api.wheretheiss.at/v1/coordinates/${latitude},-${longitude}`)
+const getGeoLocation = async (latitude, longitude) => {
+    const response2 = await fetch(`https://api.wheretheiss.at/v1/coordinates/${latitude},${longitude}`)
     const data2 = await response2.json();
-    const { timezone, country_code } = data2;
-    console.log(timezone, country_code);
+    const { timezone_id, country_code } = data2;
+    console.log(data2)
 }
 
 getISS()
 
 
-// setInterval(getISS, 2000);
+setInterval(getISS, 2000);

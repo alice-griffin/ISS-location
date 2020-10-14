@@ -1,16 +1,70 @@
 body {
     background: url(./images/347.jpg) no-repeat center center fixed;
     background-size: cover;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     color: white; 
     font-family: 'Audiowide', cursive;
-    font-size: 24px;
+    font-size: 26px;
+    margin-right: 100%;
+}
+
+.info {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+p {
+    color: white; 
+    font-family: 'Space mono', cursive;
+}
+
+a {
+    font-size: 12px;
 }
 
 
 #issMap {
+    display: flex;
     height: 300px;
-    width: 300px;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer {
+    margin-top: auto;
+    min-height: 20px;
+    bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+    
+    .section {
+        display: flex;
+        width: 100%;
+    }
+
+    h1 {
+        width: 50%;
+        font-size: 47px;
+    }
+
+    #issMap {
+        width: 50%;
+        height: 500px;
+    }
 }
