@@ -38,14 +38,15 @@ a {
 
 
 #issMap {
-    display: flex;
     height: 300px;
     width: 100%;
     justify-content: center;
 }
 
 .footer {
+    display: flex;
     margin-top: auto;
+    justify-content: center;
     min-height: 20px;
     bottom: 0;
 }
@@ -56,15 +57,34 @@ a {
     .section {
         display: flex;
         width: 100%;
+        margin-top: 30px;
     }
 
     h1 {
+        font-size: 50px;
+        margin: 0px;
         width: 50%;
-        font-size: 47px;
+    }
+
+    .title {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
     }
 
     #issMap {
-        width: 50%;
-        height: 500px;
+        width: 40%;
+        height: 400px;
+        flex-grow: 1;
+    }
+
+    p {
+        font-size: 26px;
+    }
+
+    .parent {
+        margin-left: 100px;
+        margin-right: 100px;
     }
 }
